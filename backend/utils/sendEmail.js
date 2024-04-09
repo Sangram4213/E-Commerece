@@ -6,7 +6,7 @@ const transporter = nodeMailer.createTransport({
     service:process.env.SMPT_SERVICE,
     auth:{
         user:process.env.SMPT_MAIL,
-        password:process.env.SMPT_PASSWORD,
+        pass:process.env.SMPT_PASSWORD,
     }
 })
 const mailOptions = {
