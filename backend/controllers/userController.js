@@ -104,10 +104,10 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
 exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   //creating token hash
-  const resetPasswordToken = (this.resetPasswordToken = crypto
+  const resetPasswordToken = crypto
     .createHash("sha256")
     .update(req.params.token)
-    .digest("hex"));
+    .digest("hex");
 
   const user = await User.findOne({
     resetPasswordToken,
@@ -127,3 +127,38 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   await user.save();
   sendToken(user,200,res);
 });
+
+//Get User Details
+exports.getUsersDetails = catchAsyncErrors(async(req,res,next)=>{
+
+    const user = await User.findById(req.user.id);
+
+    res.status(200).json({
+      success:true,
+      user,
+    }); 
+})
+
+//Update User Password
+exports.updateUserPassword = catchAsyncErrors(async(req,res,next)=>{
+
+  const user = await User.findById(req.user.id).select("+password");
+
+  const isPasswordMatched = user.comparePassword(req.body.oldPassword);
+  if (!isPasswordMatched) {
+    return next(new ErrorHander("Old password is incorrect", 401));
+  }
+  
+  if(req.body.newPassword !== req.body.confirmPassword){
+    return next(new ErrorHander("password is does not matched!",400));
+  }
+
+  user.password = req.body.newPassword;
+
+  await user.save();
+
+  sendToken(user,200,res);
+ 
+});
+
+//
