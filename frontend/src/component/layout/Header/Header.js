@@ -6,11 +6,6 @@ import "./Header.css";
 import Search_icon_dark from '../../../images/search-w.png';
 
 const Header = () => {
-//   const [searchActive, setSearchActive] = useState(false); // Initialize as false
-
-//   const toggleSearch = () => {
-//     setSearchActive(!searchActive);
-//   };
 
   return (
     <nav className="container">
@@ -24,12 +19,6 @@ const Header = () => {
         <Link to="/contact">Contact</Link>
       </div>
       <div className="icons">
-        {/* <div className="searchIcon" onClick={toggleSearch}>
-          <FaSearch />
-        </div>
-        <div className={`search ${searchActive ? "active" : ""}`}>
-          <input type="text" placeholder="Search..." />
-        </div> */}
 
         <div className="search-box">
             <input type="text" placeholder="Search"/>
