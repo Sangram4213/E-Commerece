@@ -1,0 +1,70 @@
+/* Header.css */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ccc; /* Grey background color for the container */
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    /* Styles for the logo container */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .logo img {
+    max-width: 100px; /* Set maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the logo fits within the container */
+    /* background-color: #fff; Background color for the logo */
+    padding: 5px; /* Optional padding for the logo */
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    position: relative; /* Position relative for pseudo-element */
+  }
+  
+  .nav-links a:hover {
+    color: crimson; /* Change text color on hover */
+  }
+  
+  .nav-links a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjust the distance of the line from the text */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Height of the line */
+    background-color: blue; /* Color of the line */
+  }
+  
+  .icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icons svg {
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer; /* Change cursor to pointer for clickable icons */
+  }
+  
+/* Header.css */
+
+.search {
+    position: absolute;
+    top: 100%; /* Position below the nav bar */
+    left: calc(100% + 10px); /* Position to the right of the search icon */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
