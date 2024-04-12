@@ -60,11 +60,30 @@
   
 /* Header.css */
 
-.search {
-    position: absolute;
-    top: 100%; /* Position below the nav bar */
-    left: calc(100% + 10px); /* Position to the right of the search icon */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
+.search-box{
+    display:flex;
+    align-items:center; 
+    padding:10px 20px;
+    border-radius:50px;   
+    background:#242424;
+}
+
+.search-box > input {
+    padding:6px;
+    background:transparent;
+    border:0;
+    outline:0;
+    color:#fff;
+    font-size:18px;
+    max-height:10px;
+}
+
+.search-box > input :: placeholder {
+    color:#fff;
+
+}
+
+.search-box img {
+    width:20px;
+    cursor:pointer;
+}

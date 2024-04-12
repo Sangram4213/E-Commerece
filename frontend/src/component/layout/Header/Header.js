@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import {  FaUser, FaShoppingCart } from "react-icons/fa";
 import logo from "../../../images/logo.png";
 import "./Header.css";
+import Search_icon_dark from '../../../images/search-w.png';
 
 const Header = () => {
-  const [searchActive, setSearchActive] = useState(true); // Initialize as true
+//   const [searchActive, setSearchActive] = useState(false); // Initialize as false
 
-  const toggleSearch = () => {
-    setSearchActive(!searchActive);
-  };
+//   const toggleSearch = () => {
+//     setSearchActive(!searchActive);
+//   };
 
   return (
     <nav className="container">
@@ -23,13 +24,16 @@ const Header = () => {
         <Link to="/contact">Contact</Link>
       </div>
       <div className="icons">
-        <div className="searchIcon" onClick={toggleSearch}>
+        {/* <div className="searchIcon" onClick={toggleSearch}>
           <FaSearch />
         </div>
-        {/* Search bar */}
-        <div className={`${searchActive ? "search" : ""}`}>
-            {console.log(searchActive)}
+        <div className={`search ${searchActive ? "active" : ""}`}>
           <input type="text" placeholder="Search..." />
+        </div> */}
+
+        <div className="search-box">
+            <input type="text" placeholder="Search"/>
+            <img src={Search_icon_dark} alt=""/>
         </div>
         <div className="loginUser">
           <Link to={"/login"}>
