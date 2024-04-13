@@ -2,7 +2,7 @@ import React from 'react';
 import {CgMouse} from 'react-icons/cg';
 import './Home.css';
 import Product from "./Product";
-
+import Metadata from '../layout/MetaData';
 
 const product = {
     name:"Blue Tshirt",
@@ -13,6 +13,8 @@ const product = {
 const Home = () => {
   return (
     <>
+    <Metadata title="ECommerce"/>
+
     <div className='banner'>
         <p>Welcome to Ecommerce</p>
         <h1>FIND AMAZING PRODUCTS BELOW</h1>
@@ -37,4 +39,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
